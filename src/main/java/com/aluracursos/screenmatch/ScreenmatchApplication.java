@@ -3,6 +3,7 @@ package com.aluracursos.screenmatch;
 import com.aluracursos.screenmatch.models.DatosSerie;
 import com.aluracursos.screenmatch.models.DatosEpisodio;
 import com.aluracursos.screenmatch.models.DatosTemporada;
+import com.aluracursos.screenmatch.principal.Principal;
 import com.aluracursos.screenmatch.service.ConsumoAPI;
 import com.aluracursos.screenmatch.service.ConvierteDatos;
 import org.springframework.boot.CommandLineRunner;
@@ -21,6 +22,12 @@ public class ScreenmatchApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+
+		Principal principio = new Principal();
+		principio.muestraElMenu();
+
+
+		/* primer enfoque
 		System.out.println("HOLA");
 		var consumoAPI = new ConsumoAPI();
 		var json = consumoAPI.obtenerDatos("https://www.omdbapi.com/?t=game+of+thrones&apikey=e1bc4c5f&");
@@ -43,7 +50,7 @@ public class ScreenmatchApplication implements CommandLineRunner {
 			var temporada = conversor.obtenerDatos(json, DatosTemporada.class);
 			temporadas.add(temporada);
 		}
-		temporadas.forEach(System.out::println);
+		temporadas.forEach(System.out::println);*/
 
 	}
 }
