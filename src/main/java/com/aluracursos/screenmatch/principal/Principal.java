@@ -25,7 +25,7 @@ public class Principal {
             System.out.println("Escribe el nombre de la série que deseas buscar");
             var nombreSerie = teclado.nextLine();
 
-            //obtener la serie
+            //obtener la serie pasarlos a DatosSeries
             var json = consumoAPI.obtenerDatos(URL + nombreSerie.replace(" ", "+") + APIKEY);
             DatosSerie datos = null;
             try {
@@ -35,7 +35,9 @@ public class Principal {
             }
             System.out.println(datos.totalTemporadas());
 
-            //obtener los datos de las temporada
+            //-------------------------------------------------------------------
+
+            //obtener los datos de las temporada pasarlos a DatosTemporada
             List<DatosTemporada> temporadas = new ArrayList<>();
             for (int i = 1; i <= datos.totalTemporadas(); i++) {
                 json = consumoAPI.obtenerDatos(URL + nombreSerie.replace(" ", "+") + "&Season=" + i + APIKEY);
@@ -47,7 +49,7 @@ public class Principal {
                 }
                 temporadas.add(datosTemporada);
             }
-            //temporadas.forEach(System.out::println);
+            temporadas.forEach(System.out::println);
 
             for (int i = 0; i < datos.totalTemporadas(); i++) {
                 List<DatosEpisodio> episodiosTemporadas = temporadas.get(i).episodios();
@@ -72,7 +74,7 @@ public class Principal {
                     .flatMap(t -> t.episodios().stream())
                     .collect(Collectors.toList());
             System.out.println("\n Top 5 episodios");
-
+            /*
             datosEpisodios.stream()
                     .filter(e -> !e.evaluacion().equalsIgnoreCase("N/A"))
                     .sorted(Comparator.comparing(DatosEpisodio::evaluacion).reversed())
@@ -101,7 +103,7 @@ public class Principal {
                                     " Fecha de Lanzamiento: " + e.getFechaDeLanzamiento().format(formatter)
                     ));
 
-        }
+        }*/
         }
     }
 
