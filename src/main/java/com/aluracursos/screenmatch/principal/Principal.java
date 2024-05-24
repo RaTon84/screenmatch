@@ -1,15 +1,12 @@
 package com.aluracursos.screenmatch.principal;
 
-import com.aluracursos.screenmatch.models.DatosEpisodio;
-import com.aluracursos.screenmatch.models.DatosSerie;
-import com.aluracursos.screenmatch.models.DatosTemporada;
-import com.aluracursos.screenmatch.models.Episodio;
+import com.aluracursos.screenmatch.model.DatosEpisodio;
+import com.aluracursos.screenmatch.model.DatosSerie;
+import com.aluracursos.screenmatch.model.DatosTemporada;
 import com.aluracursos.screenmatch.service.ConsumoAPI;
 import com.aluracursos.screenmatch.service.ConvierteDatos;
 import com.fasterxml.jackson.core.JsonProcessingException;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.stream.Collectors;
 

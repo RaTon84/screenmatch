@@ -1,4 +1,4 @@
-package com.aluracursos.screenmatch.models;
+package com.aluracursos.screenmatch.model;
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 
