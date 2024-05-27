@@ -1,6 +1,8 @@
 package com.aluracursos.screenmatch;
 
 import com.aluracursos.screenmatch.principal.Principal;
+import com.aluracursos.screenmatch.repository.SerieRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,17 +10,22 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ScreenmatchApplication implements CommandLineRunner {
 
-	public static void main(String[] args) {SpringApplication.run(ScreenmatchApplication.class, args);
-
+	@Autowired
+	private SerieRepository repository;
+	public static void main(String[] args) {
+		SpringApplication.run(ScreenmatchApplication.class, args);
 	}
 
 	@Override
 	public void run(String... args) throws Exception {
+		Principal principal = new Principal(repository);
+		principal.muestraElMenu();
 
-		Principal principio = new Principal();
-		principio.muestraElMenu();
 
 
+
+	}
+}
 		/* primer enfoque
 		System.out.println("HOLA");
 		var consumoAPI = new ConsumoAPI();
@@ -42,7 +49,7 @@ public class ScreenmatchApplication implements CommandLineRunner {
 			var temporada = conversor.obtenerDatos(json, DatosTemporada.class);
 			temporadas.add(temporada);
 		}
-		temporadas.forEach(System.out::println);*/
+		temporadas.forEach(System.out::println);
 
 	}
-}
+}*/
