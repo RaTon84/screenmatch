@@ -2,6 +2,8 @@
 //
 //import com.aluracursos.screenmatch.principal.Principal;
 //import com.aluracursos.screenmatch.repository.SerieRepository;
+//import com.aluracursos.screenmatch.principal.Principal;
+//import com.aluracursos.screenmatch.repository.SerieRepository;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.boot.CommandLineRunner;
 //import org.springframework.boot.SpringApplication;
@@ -20,9 +22,5 @@
 //	public void run(String... args) throws Exception {
 //		Principal principal = new Principal(repository);
 //		principal.muestraElMenu();
-//
-//
-//
-//
 //	}
 //}
